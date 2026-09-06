@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>A cidade</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Playfair+Display:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --background: #e9e7e1;
+        --text: #171715;
+        --secondary: #77756e;
+        --line: rgba(23, 23, 21, 0.18);
+        --transition: 400ms ease;
+      }
+
+      body.night {
+        --background: #111210;
+        --text: #e9e7df;
+        --secondary: #999890;
+        --line: rgba(233, 231, 223, 0.18);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: var(--background);
+        color: var(--text);
+        transition:
+          background var(--transition),
+          color var(--transition);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      /* BOTÃO DE MODO NOTURNO */
+
+      .theme-button {
+        position: fixed;
+        top: 28px;
+        right: 32px;
+        z-index: 10;
+
+        width: 42px;
+        height: 42px;
+
+        border: 1px solid var(--line);
+        border-radius: 50%;
+
+        background: transparent;
+        color: var(--text);
+
+        cursor: pointer;
+
+        font-size: 17px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transition:
+          background 200ms ease,
+          color 200ms ease,
+          transform 200ms ease;
+      }
+
+      .theme-button:hover {
+        background: var(--text);
+        color: var(--background);
+        transform: rotate(15deg);
+      }
+
+      /* PÁGINA */
+
+      main {
+        width: 100%;
+        padding: 15vh 24px 20vh;
+      }
+
+      /* TÍTULO */
+
+      .title {
+        max-width: 850px;
+        margin: 0 auto 15vh;
+
+        font-family: "Playfair Display", Georgia, serif;
+
+        font-size: clamp(4.5rem, 13vw, 11rem);
+
+        font-weight: 400;
+
+        line-height: 0.85;
+
+        letter-spacing: -0.065em;
+      }
+
+      /* TEXTO */
+
+      .text {
+        max-width: 680px;
+        margin: 0 auto;
+
+        font-family: "Playfair Display", Georgia, serif;
+
+        font-size: 1.2rem;
+
+        line-height: 1.9;
+      }
+
+      .text p {
+        margin-bottom: 2.3rem;
+      }
+
+      /* FRASES ISOLADAS */
+
+      .text .isolated {
+        margin: 5rem 0;
+
+        text-align: center;
+
+        font-size: 2rem;
+
+        line-height: 1.3;
+
+        font-style: italic;
+      }
+
+      /* FRASE DE DESTAQUE */
+
+      .text .highlight {
+        margin: 5rem 0 2.5rem;
+
+        padding-left: 25px;
+
+        border-left: 1px solid var(--text);
+
+        font-size: 1.7rem;
+
+        line-height: 1.45;
+      }
+
+      /* FINAL */
+
+      .end {
+        max-width: 680px;
+        margin: 10vh auto 0;
+
+        padding-top: 20px;
+
+        border-top: 1px solid var(--line);
+
+        font-family: "DM Mono", monospace;
+
+        font-size: 0.6rem;
+
+        letter-spacing: 0.12em;
+
+        color: var(--secondary);
+
+        text-transform: uppercase;
+      }
+
+      /* CELULAR */
+
+      @media (max-width: 700px) {
+        .theme-button {
+          top: 18px;
+          right: 18px;
+        }
+
+        main {
+          padding: 12vh 25px 15vh;
+        }
+
+        .title {
+          margin-bottom: 12vh;
+
+          font-size: clamp(4rem, 21vw, 7rem);
+        }
+
+        .text {
+          font-size: 1.08rem;
+          line-height: 1.85;
+        }
+
+        .text .isolated {
+          font-size: 1.65rem;
+          margin: 4rem 0;
+        }
+
+        .text .highlight {
+          font-size: 1.45rem;
+          padding-left: 18px;
+        }
+
+        .end {
+          margin-top: 8vh;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- MODO NOTURNO -->
+
+    <button
+      class="theme-button"
+      id="themeButton"
+      aria-label="Ativar modo noturno"
+    >
+      ☾
+    </button>
+
+    <main>
+      <!-- TÍTULO -->
+
+      <h1 class="title">A cidade</h1>
+
+      <!-- TEXTO -->
+
+      <article class="text">
+        <p>
+          Há períodos da vida em que aquilo que antes parecia familiar começa a
+          adquirir uma estranha distância. O mundo permanece o mesmo, mas a
+          maneira de habitá-lo muda. Lugares, pessoas, ruas e até espaços que
+          antes pareciam seguros passam a carregar uma espécie de estranhamento.
+          Talvez crescer seja, em parte, perceber que já não se pode permanecer
+          indefinidamente dentro das mesmas fronteiras.
+        </p>
+
+        <p>
+          Por muito tempo, o mundo lá fora me pareceu grande demais. Havia algo
+          de ameaçador na ideia de atravessá-lo, de ocupar espaços, de
+          simplesmente estar entre desconhecidos. A cidade, principalmente, me
+          causava medo. Seus prédios enormes, suas ruas, o barulho, a quantidade
+          incontável de pessoas seguindo vidas que eu jamais conheceria. Havia
+          algo quase hostil naquela imensidão.
+        </p>
+
+        <p>
+          Mas algumas coisas mudam sem que o medo necessariamente desapareça.
+        </p>
+
+        <p>
+          Em algum momento, ficar preso dentro do quarto deixou de parecer
+          suficiente. Comecei a sair. Sem destino, sem a necessidade de chegar a
+          algum lugar. Caminho pelas ruas, observo, contemplo. E aos poucos,
+          aquilo que antes me perturbava começou a me fascinar.
+        </p>
+
+        <p class="isolated">A cidade é sublime.</p>
+
+        <p>
+          A cidade é, antes de qualquer coisa, uma expressão humana. Foi feita
+          por nós e para nós. Nada está ali por acaso: bloco por bloco, parede
+          por parede, alguém construiu, modificou, demoliu, reformou, ocupou.
+          Cada rua carrega uma sucessão de decisões humanas. Cada janela guarda
+          um mundo inteiro em si.
+        </p>
+
+        <p>
+          Os edifícios abrigam pequenos mundos que coexistem dentro do mesmo
+          organismo sem necessariamente se conhecer.
+        </p>
+
+        <p>
+          Por isso, já não consigo mais olhar para a cidade com os mesmos olhos.
+          Pensava antes que as cidades eram monstruosidades, uma profanação da
+          natureza, uma abominação que não devia existir. Mas agora eu vejo
+          diferente, a cidade é a continuação da natureza, uma extensão orgânica
+          de nós mesmos, vejo os prédios brotarem como árvores. Crescem, se
+          acumulam, se sobrepõem. Entre eles existem raízes: ruas, becos,
+          túneis, dutos, escadas, passagens, lugares que quase nunca recebem
+          atenção. E dentro dessa estrutura, há núcleos de vida completamente
+          independentes, mas ainda assim pertencentes ao mesmo ecossistema.
+        </p>
+
+        <p class="isolated">A cidade é viva, é linda, é assustadora.</p>
+
+        <p>
+          Há vida em cada canto dela. Na fachada ornamentada e na viela escura.
+          Na avenida movimentada e na rua esquecida. Nos lugares iluminados e
+          naqueles que passam despercebidos pelos transeuntes. Existem olhos por
+          toda parte, janelas, câmeras, pessoas, reflexos, movimentos. Mesmo
+          quando ninguém parece nos notar, estamos inseridos em alguma coisa
+          muito maior que nós.
+        </p>
+
+        <p>
+          Na rua, somos apenas mais um. Quase fantasmas atravessando outros
+          fantasmas. E, ainda assim, nossa presença não passa completamente
+          despercebida. Ocupamos espaço, alteramos pequenos percursos, cruzamos
+          olhares, interrompemos trajetórias. Existir em uma cidade é também
+          interferir nela, mesmo que de maneira quase imperceptível.
+        </p>
+
+        <p>Foi caminhando que percebi isso.</p>
+
+        <p class="highlight">
+          Quando você olha para a cidade por tempo suficiente, ela devolve o
+          olhar.
+        </p>
+
+        <p>
+          Você nunca é um observador completamente passivo. A maneira como
+          enxerga a rua determina o que aquela rua se torna para você. Um prédio
+          pode ser uma ameaça, uma monstruosidade, uma estrutura indiferente,
+          algo sublime ou até mesmo um reflexo, depende de você.
+        </p>
+      </article>
+
+      <div class="end">fim</div>
+    </main>
+
+    <script>
+      const button = document.getElementById("themeButton");
+
+      const savedTheme = localStorage.getItem("theme");
+
+      if (savedTheme === "night") {
+        document.body.classList.add("night");
+
+        button.textContent = "☀";
+      }
+
+      button.addEventListener("click", () => {
+        const night = document.body.classList.toggle("night");
+
+        if (night) {
+          button.textContent = "☀";
+
+          localStorage.setItem("theme", "night");
+        } else {
+          button.textContent = "☾";
+
+          localStorage.setItem("theme", "day");
+        }
+      });
+    </script>
+  </body>
+</html>
